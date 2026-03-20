@@ -1,1 +1,272 @@
-/* Add styles here */
+:root {
+    --miseek-red: #bc0a24;
+    --miseek-scarlet: #d1082c;
+    --secondary-color: #f5f5f5; /* Light Gray */
+    --font-color: #333;
+    --white: #fff;
+}
+
+body {
+    font-family: sans-serif;
+    margin: 0;
+    background-color: var(--secondary-color);
+    color: var(--font-color);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    background-color: var(--white);
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    border-bottom: 2px solid var(--miseek-red);
+    height: 80px;
+}
+
+.logo img {
+    height: 40px;
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+nav li {
+    margin: 0 1.5rem;
+}
+
+nav a {
+    color: var(--font-color);
+    text-decoration: none;
+    padding: 1rem 0;
+    font-size: 1.1rem;
+    font-weight: bold;
+    display: block;
+    transition: color 0.2s ease;
+}
+
+nav a:hover {
+    color: var(--miseek-red);
+}
+
+.header-actions {
+    width: 40px; /* To balance the logo */
+}
+
+.container {
+    display: flex;
+    margin: 2rem;
+    flex: 1;
+}
+
+main {
+    flex: 3;
+    margin-right: 2rem;
+}
+
+article {
+    background-color: var(--white);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    margin-bottom: 1rem;
+}
+
+article h2 {
+    color: var(--miseek-red);
+    margin-top: 0;
+}
+
+aside {
+    flex: 1;
+    background-color: var(--white);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    height: fit-content;
+}
+
+aside h3 {
+    color: var(--miseek-red);
+    margin-top: 0;
+}
+
+/* Dropdown Menu */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: var(--white);
+    list-style: none;
+    padding: 0.5rem 0;
+    margin-top: 1rem;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    min-width: 180px;
+    z-index: 1;
+}
+
+.dropdown-menu li a {
+    color: var(--font-color);
+    padding: 0.75rem 1.5rem;
+    display: block;
+    text-align: left;
+    font-weight: normal;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+/* Floating Action Button */
+.fab {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background-color: var(--miseek-red);
+    color: var(--white);
+    border: none;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.fab:hover {
+    background-color: var(--miseek-scarlet);
+    transform: scale(1.1);
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    position: relative;
+}
+
+.close-button {
+    color: #aaa;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#post-form {
+    display: flex;
+    flex-direction: column;
+}
+
+#post-form input,
+#post-form textarea {
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+#post-form button {
+    background-color: var(--miseek-red);
+    color: white;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+#post-form button:hover {
+    background-color: var(--miseek-scarlet);
+}
+
+footer {
+    background-color: var(--white);
+    color: var(--font-color);
+    padding: 1rem;
+    text-align: center;
+    margin-top: auto; 
+    border-top: 2px solid var(--miseek-red);
+}
+
+@media (max-width: 992px) {
+    header {
+        padding: 0 1rem;
+        height: auto;
+        flex-direction: column;
+        padding-bottom: 1rem;
+    }
+    .logo {
+        padding: 1rem 0;
+    }
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+    nav li {
+        margin: 0.5rem 0;
+    }
+    .header-actions {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        margin: 1rem;
+    }
+
+    main {
+        margin-right: 0;
+        margin-bottom: 1rem;
+    }
+
+    .modal-content {
+        width: 95%;
+        margin: 20% auto;
+    }
+}
